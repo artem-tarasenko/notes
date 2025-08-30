@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  notes-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4173:80"
+    container_name: notes-app
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--quiet",
+          "--tries=1",
+          "--spider",
+          "http://localhost/health",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    environment:
+      - NODE_ENV=production

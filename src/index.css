@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: hidden;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #242424;
+  color: #cccccc;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+}
